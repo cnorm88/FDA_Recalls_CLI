@@ -5,7 +5,8 @@ class Api
     url = URI(url)
     response = Net::HTTP.get(url)
     hash = JSON.parse(response)
+    binding.pry
   end
- binding.pry
+
 
 end
