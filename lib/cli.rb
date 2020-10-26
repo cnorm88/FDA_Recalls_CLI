@@ -1,5 +1,7 @@
+class Cli
 def start
   puts "Welcome"
-  Api.fetch_drinks
+  Api.get_poster
   # self.menu
+end
 end
