@@ -16,7 +16,6 @@ class Api
    # :name, :date, :description, :image_url, :location, :title, :subject
    items_array.each do |item_hash|
      poster = Poster.new
-     binding.pry
      poster.name = item_hash["contributor"]
      poster.date = item_hash["date"]
      poster.description = item_hash["description"]
