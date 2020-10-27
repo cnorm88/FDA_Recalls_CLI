@@ -43,8 +43,12 @@ class Cli
   def list_of_posters
   #access all the posters
   #print each one out
-  Poster.all.uniq.each.with_index(1) do |poster, index|
-    puts "#{index}. #{poster.name}"
+  # Poster.all.each.with_index(1) do |poster, index|
+  #   poster = poster.name
+  #   puts "#{index}. #{poster.name}"
+    Poster.all.each.uniq do |poster|
+      poster = poster.name
+      puts "#{poster}"
   end
   end
 

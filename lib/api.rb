@@ -14,7 +14,7 @@ class Api
    #title
    #subject
    # :name, :date, :description, :image_url, :location, :title, :subject
-   items_array.each do |item_hash|
+   items_array.uniq.each do |item_hash|
      poster = Poster.new
      poster.name = item_hash["contributor"]
      poster.date = item_hash["date"]
