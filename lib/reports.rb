@@ -1,6 +1,6 @@
 class Reports
 
-  attr_accessor :name, :date, :description, :image_url, :location, :title, :subject
+  attr_accessor :name, :date, :location, :reason_for_recall, :description, :quantity
 
   @@all = []
 

@@ -7,13 +7,14 @@ class Api
     hash = JSON.parse(response)
     #storing the array:
     reports_array = hash["results"]
-   #contributor - name
-   #date
-   #description
-   #location_city
-   #title
-   #subject
-   # :name, :date, :description, :image_url, :location, :title, :subject
+    # recalling_firm -name
+    # reason_for_recall
+    # city
+    # state -location
+    # product_description -description
+    # recall_initiation_date  Year,Month,Date
+    # product_quantity
+    # :name, :date, :location, :reason_for_recall, :description, :quantity
   #  items_array.uniq.each do |item_hash|
   #    poster = Poster.new
   #    poster.name = item_hash["contributor"]

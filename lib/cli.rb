@@ -16,9 +16,8 @@ class Cli
     #if the user types C
     if user_input == "C" || user_input == "c"
       puts "Here's a list!"
-      #gives a random poster
-      # randomizer
-      list_of_posters
+      #give an indexed list of recalls
+      list_of_recalls
       #allows them to choose an attribute of the poster:
       #shows picture of poster, city, description
 
@@ -40,16 +39,13 @@ class Cli
 
   end
 
-  def list_of_posters
+  def list_of_recalls
   #access all the posters
   #print each one out
-  # Poster.all.each.with_index(1) do |poster, index|
-  #   poster = poster.name
-  #   puts "#{index}. #{poster.name}"
-    Poster.all.each.uniq do |poster|
-      poster = poster.name
-      puts "#{poster}"
-  end
+  # Poster.all.each.with_index(1) do |report, index|
+  #   report = report.name
+  #   puts "#{index}. #{report}"
+  # end
   end
 
   # def randomizer
