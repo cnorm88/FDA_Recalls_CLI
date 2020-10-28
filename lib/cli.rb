@@ -59,18 +59,35 @@ class Cli
       puts "Sorry invalid input. Choose a valid number"
       index = gets.strip.to_i - 1
       end
+
+      recalls = Reports.all[index]
+      recall_details(recalls)
     end
 
-    # def recall_details(report)
-    #   puts "What would you like to know about this poster? Here are your options:
-    #   Title, Description, Link to image, Location"
-    #   # recalling_firm -name
-    #   # reason_for_recall
-    #   # city
-    #   # state -location
-    #   # product_description -description
-    #   # recall_initiation_date  Year,Month,Date
-    #   # product_quantity
+    def recall_details(recalls)
+      puts "What would you like to know about this recall? Here are your options:
+      State and City, Product description, Recall date, Number of products recalled"
+
+      choice = gets.chomp.capitalize
+
+     case choice
+     when "State And City"
+       report = report.location
+       puts "#{report}"
+     else
+       puts "Sorry try again."
+#    title = gets.chomp
+#    puts "How would you rate it?"
+#    rating = gets.chomp
+# if movies[title.to_sym].nil?
+#    movies[title.to_sym] = rating.to_i
+#    puts "#{title} has been added with a rating of #{rating}."
+# else
+#    puts "That movie already exists! Its rating is #{movies[title.to_sym]}."
+    end
+
+    end
+
     #   sleep(1)
     #   puts "\n"
     #   puts drink.name
