@@ -4,7 +4,7 @@ class Cli
     puts "Please enter your name:"
     # name = gets.strip.capitalize
     # puts "Welcome to the Yanker Poster collection search #{name}"
-    Api.get_poster
+    Api.get_report
     self.menu
   end
 
