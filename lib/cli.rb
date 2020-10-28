@@ -17,7 +17,7 @@ class Cli
     if user_input == "C" || user_input == "c"
       puts "Here's a list!"
       #give an indexed list of recalls
-      list_of_recalls
+      # list_of_recalls
       #allows them to choose an attribute of the poster:
       #shows picture of poster, city, description
 
