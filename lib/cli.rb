@@ -66,28 +66,24 @@ class Cli
 
     def recall_details(report)
       puts "What would you like to know about this #{report.name} recall? Here are your options:
-      Location, Description, Recall Date, Quantity"
+      Location, Description, Date, Quantity"
 
       choice = gets.strip.capitalize
 
      case choice
-    #  when "State"
-    #      puts "\n"
-    #      puts report.location
-    #  else
-    #    puts "Sorry try again."
-    #  end
 
   when "Location"
        puts "\n"
        state = report.state
        city = report.city
-       puts "State: #{location}, City: #{city}"
+       puts "State: #{state} City: #{city}"
    when "Description"
       puts report.description
       puts report.recall_reason
+  when "Date"
    else
      puts "Sorry try again."
+     users_selection
    end
    end
   #  when "Description"
