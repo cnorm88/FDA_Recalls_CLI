@@ -140,17 +140,27 @@ def exit_or_continue
      case choice
 
      when "List"
-        puts "hey"
+       find_by_state
      else
         puts "thank you"
      end
     # end
 end
 
-# def self.find_by_name(name)
-#     @@all.find do |song|
-#       song.name == name
-#     end
-#   end
+def find_by_state
+  puts "\n"
+  puts "Which state would you like to find?"
+    state = gets.strip.upcase
+
+    Reports.all.each do |report|
+    report = report.state
+    puts "#{report.size} cases in #{state}" if report.strip.include? "#{state}"
+      #  else
+    #    puts nil
+    # end
+    end
+    puts "no results found or try again"
+    exit_or_continue
+end
 
 end
