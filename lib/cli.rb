@@ -64,6 +64,24 @@ class Cli
       recall_details(instance)
     end
 
+    # def exit_or_continue
+    #   puts "\n"
+    #    puts "If you would like to find out more information type Yes or a list of states type List or type any button to exit"
+    #
+    #       choice = gets.strip.capitalize
+    #
+    #      case choice
+    #
+    #      when "Yes"
+    #        recall_details(self)
+    #      when "List"
+    #         puts "#{report.name}"
+    #      else
+    #         puts "thank you"
+    #      end
+    #     # end
+    # end
+
     def recall_details(report)
       puts "\n"
       puts "What would you like to know about this #{report.name} recall? Here are your options:
@@ -75,22 +93,24 @@ class Cli
 
   when "Location"
        puts "State: #{report.state} City: #{report.city}"
-       recall_details(report)
-   when "Description"
+      #  recall_details(report)
+       exit_or_continue
+when "Description"
       puts report.description
       puts report.recall_reason
-      recall_details(report)
+      exit_or_continue
   when "Date"
     puts report.date
-    recall_details(report)
+    exit_or_continue
 
   when "Quantity"
       puts "\n"
       puts report.quantity
 
      else
-       puts "Type exit now or try again or type Options to acquire more information"
+      #  puts "Type exit now or try again or type Options to acquire more information"
       # a method
+       exit_or_continue
      end
      end
 
@@ -105,11 +125,29 @@ class Cli
     #  if user_input == "Y" || user_input == "y"
     #    puts "Lets continue"
     #    #or a new method
+    #when "exit"
+
     #  else
     #    puts "thanks" //the exit
 
   #the new method
       #all the recalls made in a specific state or specific time frame
+def exit_or_continue
+  puts "\n"
+   puts "If you would like to find out more information type Yes or a list of states type List or type any button to exit"
 
+      choice = gets.strip.capitalize
+
+     case choice
+
+     when "Yes"
+       recall_details(report)
+     when "List"
+        puts "#{report.name}"
+     else
+        puts "thank you"
+     end
+    # end
+end
 
   end
