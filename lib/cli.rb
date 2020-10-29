@@ -55,7 +55,7 @@ class Cli
         index = gets.strip.to_i - 1
         #index valid? #btwn 0 & 6
       until index.between?(0, Reports.all.length - 1)
-    # keep asking for user input
+    # keep asking for user input #???an EXIT
       puts "Sorry invalid input. Choose a valid number"
       index = gets.strip.to_i - 1
       end
@@ -65,52 +65,59 @@ class Cli
     end
 
     def recall_details(report)
+      puts "\n"
       puts "What would you like to know about this #{report.name} recall? Here are your options:
       Location, Description, Date, Quantity"
-
+#for other options type exit
       choice = gets.strip.capitalize
 
      case choice
 
   when "Location"
-       puts "\n"
-       state = report.state
-       city = report.city
-       puts "State: #{state} City: #{city}"
+       puts "State: #{report.state} City: #{report.city}"
+       recall_details(report)
    when "Description"
       puts report.description
       puts report.recall_reason
+      recall_details(report)
   when "Date"
-   else
-     puts "Sorry try again."
-     users_selection
-   end
-   end
-  #  when "Description"
-  #    puts "\n"
-  #    puts report.description
-  #  else
-  #    puts "Sorry try again."
-  #  end
+    puts report.date
+    recall_details(report)
 
-#    title = gets.chomp
-#    puts "How would you rate it?"
-#    rating = gets.chomp
-# if movies[title.to_sym].nil?
-#    movies[title.to_sym] = rating.to_i
-#    puts "#{title} has been added with a rating of #{rating}."
-# else
-#    puts "That movie already exists! Its rating is #{movies[title.to_sym]}."
-
-
-    #   sleep(1)
-    #   puts "\n"
-    #   puts drink.name
-    #   puts "Glass: " + drink.glass
-    #   puts "Instructions: " + drink.instructions
-    #   puts "German Instructions: " + drink.german_instructions
+  when "Quantity"
+    puts "\n"
+    puts report.quantity
+  # when "Option"
+  #   puts "\n"
+  #   puts "Would you like to ? if Yes enter Y to continue and any button to exit"
+  #   user_input = gets.strip.downcase
+  #   if user_input == "Y" || user_input == "y"
+  #     puts "Lets continue"
+  #     #or a new method
+  #   else
+  #     puts "thanks"
     # end
+   else
+     puts "Sorry try again or type Options to acquire more information"
 
+   end
+   end
+
+  #  puts something to exit or "Sorry try again (method to try again) or type Options to acquire more information"
+ # calls recall_details(report) -> to try again
+ # ask would you like to try again ^ else "no" = exit
+
+ # when "Option"
+  #  puts "\n"
+  #  puts "Would you like to ? if Yes enter Y to continue and any button to exit"
+  #  user_input = gets.strip.downcase
+  #  if user_input == "Y" || user_input == "y"
+  #    puts "Lets continue"
+  #    #or a new method
+  #  else
+  #    puts "thanks" //the exit
+
+#the new method
     #all the recalls made in a specific state or specific time frame
 
 
