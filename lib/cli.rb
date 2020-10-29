@@ -60,23 +60,22 @@ class Cli
       index = gets.strip.to_i - 1
       end
 
-      recalls = Reports.all[index]
-      recall_details(recalls)
+      instance = Reports.all[index]
+      recall_details(instance)
     end
 
-    # def recall_details(recalls)
-    #   puts "What would you like to know about this recall? Here are your options:
-    #   State, Product description, Recall date, Number of products recalled"
-    #
-    #   choice = gets.strip.capitalize
-    #
-    #  case choice
-    #  when "State"
-    #
-    #      puts "\n"
-    #      puts report.name
-    #  else
-    #    puts "Sorry try again."
+    def recall_details(report)
+      puts "What would you like to know about this #{report.name} recall? Here are your options:
+      State, Product description, Recall date, Number of products recalled"
+
+      choice = gets.strip.capitalize
+
+     case choice
+     when "State"
+         puts "\n"
+         puts report.location
+     else
+       puts "Sorry try again."
 #    title = gets.chomp
 #    puts "How would you rate it?"
 #    rating = gets.chomp
