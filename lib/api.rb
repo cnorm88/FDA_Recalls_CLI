@@ -1,7 +1,7 @@
 class Api
 
   def self.get_report
-    url = "https://api.fda.gov/food/enforcement.json?search=report_date:[20200101+TO+20200520]&limit=10"
+    url = "https://api.fda.gov/food/enforcement.json?search=report_date:[20200101+TO+20200520]&limit=15"
     url = URI(url)
     response = Net::HTTP.get(url)
     hash = JSON.parse(response)
@@ -19,7 +19,8 @@ class Api
        report = Reports.new
        report.name = reports_hash["recalling_firm"]
        report.date = reports_hash["recall_initiation_date"]
-       report.location = reports_hash["state"]
+       report.state = reports_hash["state"]
+       report.city = reports_hash["city"]
        report.recall_reason = reports_hash["reason_for_recall"]
        report.description = reports_hash["product_description"]
        report.quantity = reports_hash["product_quantity"]

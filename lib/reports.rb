@@ -1,6 +1,6 @@
 class Reports
 
-  attr_accessor :name, :date, :location, :recall_reason, :description, :quantity
+  attr_accessor :name, :date, :state, :city, :recall_reason, :description, :quantity
 
   @@all = []
 

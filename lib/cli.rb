@@ -66,16 +66,37 @@ class Cli
 
     def recall_details(report)
       puts "What would you like to know about this #{report.name} recall? Here are your options:
-      State, Product description, Recall date, Number of products recalled"
+      Location, Description, Recall Date, Quantity"
 
       choice = gets.strip.capitalize
 
      case choice
-     when "State"
-         puts "\n"
-         puts report.location
-     else
-       puts "Sorry try again."
+    #  when "State"
+    #      puts "\n"
+    #      puts report.location
+    #  else
+    #    puts "Sorry try again."
+    #  end
+
+  when "Location"
+       puts "\n"
+       state = report.state
+       city = report.city
+       puts "State: #{location}, City: #{city}"
+   when "Description"
+      puts report.description
+      puts report.recall_reason
+   else
+     puts "Sorry try again."
+   end
+   end
+  #  when "Description"
+  #    puts "\n"
+  #    puts report.description
+  #  else
+  #    puts "Sorry try again."
+  #  end
+
 #    title = gets.chomp
 #    puts "How would you rate it?"
 #    rating = gets.chomp
@@ -84,9 +105,7 @@ class Cli
 #    puts "#{title} has been added with a rating of #{rating}."
 # else
 #    puts "That movie already exists! Its rating is #{movies[title.to_sym]}."
-    end
 
-    end
 
     #   sleep(1)
     #   puts "\n"
