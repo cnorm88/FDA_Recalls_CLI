@@ -84,6 +84,7 @@ class Cli
 
     def recall_details(report)
       puts "\n"
+      # report = report.name
       puts "What would you like to know about this #{report.name} recall? Here are your options:
       Location, Description, Date, Quantity"
 #for other options type exit
@@ -93,23 +94,21 @@ class Cli
 
   when "Location"
        puts "State: #{report.state} City: #{report.city}"
-      #  recall_details(report)
-       exit_or_continue
+       recall_details(report)
+
 when "Description"
       puts report.description
       puts report.recall_reason
-      exit_or_continue
+      recall_details(report)
   when "Date"
     puts report.date
-    exit_or_continue
+    recall_details(report)
 
   when "Quantity"
       puts "\n"
       puts report.quantity
 
      else
-      #  puts "Type exit now or try again or type Options to acquire more information"
-      # a method
        exit_or_continue
      end
      end
@@ -140,14 +139,18 @@ def exit_or_continue
 
      case choice
 
-     when "Yes"
-       recall_details(report)
      when "List"
-        puts "#{report.name}"
+        puts "hey"
      else
         puts "thank you"
      end
     # end
 end
 
-  end
+# def self.find_by_name(name)
+#     @@all.find do |song|
+#       song.name == name
+#     end
+#   end
+
+end
