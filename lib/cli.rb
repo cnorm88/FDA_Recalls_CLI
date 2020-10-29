@@ -85,40 +85,31 @@ class Cli
     recall_details(report)
 
   when "Quantity"
-    puts "\n"
-    puts report.quantity
-  # when "Option"
-  #   puts "\n"
-  #   puts "Would you like to ? if Yes enter Y to continue and any button to exit"
-  #   user_input = gets.strip.downcase
-  #   if user_input == "Y" || user_input == "y"
-  #     puts "Lets continue"
-  #     #or a new method
-  #   else
-  #     puts "thanks"
-    # end
-   else
-     puts "Sorry try again or type Options to acquire more information"
+      puts "\n"
+      puts report.quantity
 
-   end
-   end
+     else
+       puts "Type exit now or try again or type Options to acquire more information"
+      # a method
+     end
+     end
 
-  #  puts something to exit or "Sorry try again (method to try again) or type Options to acquire more information"
- # calls recall_details(report) -> to try again
- # ask would you like to try again ^ else "no" = exit
+    #  puts something to exit or "Sorry try again (method to try again) or type Options to acquire more information"
+   # calls recall_details(report) -> to try again
+   # ask would you like to try again ^ else "no" = exit
 
- # when "Option"
-  #  puts "\n"
-  #  puts "Would you like to ? if Yes enter Y to continue and any button to exit"
-  #  user_input = gets.strip.downcase
-  #  if user_input == "Y" || user_input == "y"
-  #    puts "Lets continue"
-  #    #or a new method
-  #  else
-  #    puts "thanks" //the exit
+   # when "Option"
+    #  puts "\n"
+    #  puts "Would you like to ? if Yes enter Y to continue and any button to exit"
+    #  user_input = gets.strip.downcase
+    #  if user_input == "Y" || user_input == "y"
+    #    puts "Lets continue"
+    #    #or a new method
+    #  else
+    #    puts "thanks" //the exit
 
-#the new method
-    #all the recalls made in a specific state or specific time frame
+  #the new method
+      #all the recalls made in a specific state or specific time frame
 
 
-end
+  end
