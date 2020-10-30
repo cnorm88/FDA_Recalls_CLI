@@ -89,22 +89,35 @@ def find_by_state
   puts "Type the 2 letter abbreviation for your state:"
     state = gets.strip.upcase
 
-  Reports.all.each do |report|
+  # Reports.all.each do |report|
+  #   report = report.state
+  #   if report.include? "#{state}"
+  #     puts "#{report.size} cases in #{state}"
+  #     break
+  #   elsif
+  #     report.include? "#{state}"
+  #     puts "#{report.size} cases in #{state}"
+  #   else
+  #     puts "No results found or try again"
+  #     exit_or_continue
+  #     break
+  #   end
+
+  Reports.all.select do |report|
     report = report.state
     if report.include? "#{state}"
       puts "#{report.size} cases in #{state}"
       break
-    # puts "#{report.size} cases in #{state}" if report.strip.include? "#{state}"
-  elsif
-      puts "\n"
+    # elsif
+    #   report.include? "#{state}"
+    #   puts "#{report.size} cases in #{state}"
+    else
       puts "No results found or try again"
-      # exit_or_continue
+      exit_or_continue
+      break
     end
-# else
-#     sleep (3)
-#     puts "\n"
-#     puts "No results found or try again"
-end
+
+  end
     # menu
 end
 
