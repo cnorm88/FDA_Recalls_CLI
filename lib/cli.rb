@@ -44,7 +44,6 @@ def users_selection
   end
   instance = Reports.all[index]
   recall_details(instance)
-  find_by_state(instance)
 end
 
 def recall_details(report)
@@ -83,12 +82,14 @@ def recall_details(report)
     else
       puts "Thank you"
     end
+    report = Reports.all[index]
+    find_by_state(report)
 end
 
-def find_by_state(state)
+def find_by_state(report)
   puts "\n"
   puts "Type the 2 letter abbreviation for your state:"
-    states = gets.strip.upcase
+    state = gets.strip.upcase
 
   # Reports.all.each do |report|
   #   report = report.state
@@ -107,8 +108,8 @@ def find_by_state(state)
   Reports.all.select do |state_name|
     state_name = report.state
     binding.pry
-    if state_name.include? "#{states}"
-      puts "#{report.size} cases in #{states}"
+    if state_name.include? "#{state}"
+      puts "#{report.size} cases in #{state}"
       break
     # elsif
     #   report.include? "#{state}"
