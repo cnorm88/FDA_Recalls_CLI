@@ -21,7 +21,6 @@ class Cli
 
       list_of_recalls
       users_selection
-      find_by_state
     else
       sleep(1)
       puts "\n"
@@ -75,7 +74,7 @@ def recall_details(report)
 
   def exit_or_continue
     puts "\n"
-    puts "To see if any recalls occured in your state type 'List' or type any character to Exit"
+    puts "Type any character to Exit or Type 'List' to see if any recalls occured in your state"
     choice = gets.strip.capitalize
 
     if choice == "List"
@@ -90,14 +89,14 @@ def find_by_state
   puts "Type the 2 letter abbreviation for your state:"
     name = gets.strip.upcase
 
-  Reports.all.each do |state_name|
-    if state_name.state == "#{name}"
-      puts "Your state has recall reports."
-      break
-    else
-      puts "No results found or try again"
-      exit_or_continue
-      break
+    Reports.all.each do |state_name|
+      if state_name.state == "#{name}"
+        puts "Your state has recall reports."
+        break
+      else
+        puts "No results found or try again"
+        exit_or_continue
+        break
     end
   end
 end
