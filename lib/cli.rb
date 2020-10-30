@@ -96,13 +96,22 @@ def find_by_state
 
   Reports.all.each do |report|
     report = report.state
-    puts "#{report.size} cases in #{state}" if report.strip.include? "#{state}"
+if report.strip.include? "#{state}"
+  puts "#{report.size} cases in #{state}"
 
-  end
-    sleep (3)
-    puts "\n"
-    puts "No results found or try again"
-    exit_or_continue
+    # puts "#{report.size} cases in #{state}" if report.strip.include? "#{state}"
+    else
+      sleep (3)
+      puts "\n"
+      puts "No results found or try again"
+      # exit_or_continue
+    end
+# else
+#     sleep (3)
+#     puts "\n"
+#     puts "No results found or try again"
+end
+    # exit_or_continue
 end
 
 end
