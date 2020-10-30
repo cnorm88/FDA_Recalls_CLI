@@ -48,7 +48,7 @@ end
 
 def recall_details(report)
   puts "\n"
-  puts "What would you like to know about this #{report.name} recall? Here are your options: Location, Description, Date, Quantity. Type C to continue or E to exit"
+  puts "What would you like to know about this #{report.name} recall? Here are your options: Location, Description, Date, Quantity or Type C for more info & E to Exit"
     choice = gets.strip.capitalize
 
     case choice
@@ -74,18 +74,13 @@ def recall_details(report)
 
   def exit_or_continue
     puts "\n"
-    puts "To see how many recalls occured in your state type 'List' or type exit to leave"
+    puts "To see how many recalls occured in your state type 'List' or type any character to Exit"
     choice = gets.strip.capitalize
 
     if choice == "List"
        find_by_state
     else
       puts "Thank you"
-    # case choice
-    #   when "List"
-    #     find_by_state
-    #   else
-    #     puts "thank you"
     end
 end
 
@@ -96,12 +91,11 @@ def find_by_state
 
   Reports.all.each do |report|
     report = report.state
-if report.strip.include? "#{state}"
-  puts "#{report.size} cases in #{state}"
-
+    if report.include? "#{state}"
+      puts "#{report.size} cases in #{state}"
+      break
     # puts "#{report.size} cases in #{state}" if report.strip.include? "#{state}"
-    else
-      sleep (3)
+  elsif
       puts "\n"
       puts "No results found or try again"
       # exit_or_continue
@@ -111,7 +105,7 @@ if report.strip.include? "#{state}"
 #     puts "\n"
 #     puts "No results found or try again"
 end
-    # exit_or_continue
+    # menu
 end
 
 end
