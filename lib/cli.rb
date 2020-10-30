@@ -21,6 +21,7 @@ class Cli
 
       list_of_recalls
       users_selection
+      find_by_state
     else
       sleep(1)
       puts "\n"
@@ -82,14 +83,12 @@ def recall_details(report)
     else
       puts "Thank you"
     end
-    report = Reports.all[index]
-    find_by_state(report)
 end
 
-def find_by_state(report)
+def find_by_state
   puts "\n"
   puts "Type the 2 letter abbreviation for your state:"
-    state = gets.strip.upcase
+    state_name = gets.strip.upcase
 
   # Reports.all.each do |report|
   #   report = report.state
@@ -105,11 +104,12 @@ def find_by_state(report)
   #     break
   #   end
 
-  Reports.all.select do |state_name|
-    state_name = report.state
-    binding.pry
+  Reports.all.each do |state_name|
+        binding.pry
+    state_name = state_name.state
+
     if state_name.include? "#{state}"
-      puts "#{report.size} cases in #{state}"
+      puts "#{state_name.size} cases in #{state}"
       break
     # elsif
     #   report.include? "#{state}"
