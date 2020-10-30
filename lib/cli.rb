@@ -107,7 +107,7 @@ def find_by_state(state)
   Reports.all.select do |state_name|
     state_name = report.state
     binding.pry
-    if report.include? "#{states}"
+    if state_name.include? "#{states}"
       puts "#{report.size} cases in #{states}"
       break
     # elsif
