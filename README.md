@@ -1,7 +1,7 @@
 # FDA Food Recalls
 
-FDA Food Recalls is a
-This Ruby Gem provides a CLI to view the and collect information from 15 FDA food recall reports report on Jan 1st 2020 through May 20th 2020 as found on the FDA website.
+FDA Food Recalls is a Ruby Gem that provides a CLI to view and collect information from 15 FDA food recall reports made on Jan 1st 2020 through May 20th 2020 as found on the FDA website.
+Location, description, quantity, date, state, city and names of the report are provided.
 
 ## Installation
 
